@@ -43,9 +43,10 @@
 },
   "include": [
     "src/**/*",
+    "data-source.ts"
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
   ]
 }

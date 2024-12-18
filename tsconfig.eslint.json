@@ -11,6 +11,6 @@
     ".hygen.js",
     ".hygen",
     "node_modules",
-    "dist"
+    "dist",
   ]
 }
