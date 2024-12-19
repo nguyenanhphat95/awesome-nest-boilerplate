@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import path, { join } from 'node:path';
 
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -82,13 +82,13 @@ export class ApiConfigService {
   }
 
   get postgresConfig(): TypeOrmModuleOptions {
+    const srcPath = path.resolve(import.meta.dirname, '../../');
+
     const entities = [
-      join(import.meta.dirname + '/modules/**/*.entity{.ts,.js}'),
-      join(import.meta.dirname + '/modules/**/*.view-entity{.ts,.js}'),
+      join(srcPath + '/modules/**/*.entity{.ts,.js}'),
+      join(srcPath + '/modules/**/*.view-entity{.ts,.js}'),
     ];
-    const migrations = [
-      join(import.meta.dirname + '/database/migrations/*{.ts,.js}'),
-    ];
+    const migrations = [join(srcPath + '/database/migrations/*{.ts,.js}')];
 
     return {
       entities,
