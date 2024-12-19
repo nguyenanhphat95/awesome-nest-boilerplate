@@ -27,9 +27,6 @@ export class UserEntity extends AbstractEntity<UserDto, UserDtoOptions> {
   password!: string | null;
 
   @Column({ nullable: true, type: 'varchar' })
-  phone!: string | null;
-
-  @Column({ nullable: true, type: 'varchar' })
   avatar!: string | null;
 
   @VirtualColumn({
